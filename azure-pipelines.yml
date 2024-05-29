@@ -17,15 +17,13 @@ stages:
   jobs:
   - job: build_application
     displayName: 'Build Application'
-    container: node:latest
-    steps:
-    - script: |
-        apt-get update
-        apt-get install -y zip
-      displayName: 'Install dependencies'
+    - task: UseNode@1
+      inputs:
+        version: '16.x'
+      displayName: 'Install Node.js'
 
     - script: |
-        npm ci --cache .npm --prefer-offline
+        npm ci
       displayName: 'Install npm packages'
 
     - script: |
