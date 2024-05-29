@@ -20,8 +20,8 @@ stages:
     container: node:latest
     steps:
     - script: |
-        sudo apt update
-        sudo apt install -y zip
+        apt-get update
+        apt-get install -y zip
       displayName: 'Install dependencies'
 
     - script: |
