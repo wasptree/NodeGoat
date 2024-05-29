@@ -17,6 +17,7 @@ stages:
   jobs:
   - job: build_application
     displayName: 'Build Application'
+    steps:
     - task: UseNode@1
       inputs:
         version: '16.x'
